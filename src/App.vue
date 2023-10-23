@@ -1,12 +1,21 @@
 <script setup>
-import Hello from "@/components/Hello.vue"
+import {getCategoryAPI} from "@/apis/testAPI"
+import {ref} from "vue"
+
+const msg = ref("")
+const getData = ()=>{
+	getCategoryAPI().then(res=>{
+		console.log(res);
+	})
+}
+
 </script>
 
 <template>
-  <el-button type="primary">Primary</el-button>
-  <RouterView />
+  <header>
+    <el-button type="primary" @click="getData">点我获取数据</el-button>
+  </header>
 </template>
 
 <style scoped>
-
 </style>
