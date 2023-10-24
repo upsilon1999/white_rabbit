@@ -35,9 +35,12 @@ export default defineConfig({
 		preprocessorOptions:{
 			scss:{
 				// 2.自动导入定制化样式文件进行样式覆盖
-                //此处的值采用了模板字符串
-				additionalData:`@use "@/styles/element/index.scss" as *;`,
+				//此处的值使用了模板字符串
+				additionalData:`
+					@use "@/styles/element/index.scss" as *;
+					@use "@/styles/var.scss" as *;
+				`,
 			}
 		}
-	}
+	},
 })
