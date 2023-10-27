@@ -1,16 +1,20 @@
 <script setup>
 // 使用vueUse的库
 import { useScroll } from '@vueuse/core'
-
+//使用pinia里面的数据 
+import { useCategoryStore } from '@/stores/category';
 /* 
   useScroll(①)
   ①DOM对象，
   获得DOM对象滚动时的状态
 */
 // y DOM对象在垂直方向上滚动的距离
+//返回的值是自带响应式的
 const { y } = useScroll(window)
 
-//返回的值是自带响应式的
+
+//获得pinia仓库实例 
+const categoryStore = useCategoryStore()
 </script>
 
 <template>
@@ -21,35 +25,8 @@ const { y } = useScroll(window)
       <RouterLink class="logo" to="/" />
       <!-- 导航区域 -->
       <ul class="app-header-nav ">
-        <li class="home">
-          <RouterLink to="/">首页</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/">居家</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/">美食</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/">服饰</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/">母婴</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/">个护</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/">严选</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/">数码</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/">运动</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/">杂项</RouterLink>
+        <li class="home" v-for="item in categoryStore.categoryList" :key="item.id">
+          <RouterLink to="/">{{item.name}}</RouterLink>
         </li>
       </ul>
 
