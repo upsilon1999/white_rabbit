@@ -5,13 +5,33 @@
       <div class="container">
         <dl>
           <dt>客户服务</dt>
-          <dd><i class="iconfont icon-kefu"></i> 在线客服</dd>
-          <dd><i class="iconfont icon-question"></i> 问题反馈</dd>
+          <dd>
+            在线客服
+            <el-icon class="iconfont">
+              <ChatDotRound />
+            </el-icon>
+          </dd>
+          <dd>
+            问题反馈
+            <el-icon class="iconfont">
+              <Promotion />
+            </el-icon>
+          </dd>
         </dl>
         <dl>
           <dt>关注我们</dt>
-          <dd><i class="iconfont icon-weixin"></i> 公众号</dd>
-          <dd><i class="iconfont icon-weibo"></i> 微博</dd>
+          <dd>
+            生鲜之家
+            <el-icon class="iconfont">
+              <House />
+            </el-icon>
+          </dd>
+          <dd>
+            联系链接
+            <el-icon class="iconfont">
+              <Link />
+            </el-icon>
+          </dd>
         </dl>
         <dl>
           <dt>下载APP</dt>
@@ -33,15 +53,21 @@
       <div class="container">
         <div class="slogan">
           <a href="javascript:;">
-            <i class="iconfont icon-footer01"></i>
+            <el-icon>
+              <CircleCheckFilled />
+            </el-icon>
             <span>价格亲民</span>
           </a>
           <a href="javascript:;">
-            <i class="iconfont icon-footer02"></i>
+            <el-icon>
+              <Van />
+            </el-icon>
             <span>物流快捷</span>
           </a>
           <a href="javascript:;">
-            <i class="iconfont icon-footer03"></i>
+            <el-icon>
+              <Coffee />
+            </el-icon>
             <span>品质新鲜</span>
           </a>
         </div>
@@ -108,9 +134,10 @@
       border: 1px solid #ededed;
 
       .iconfont {
-        font-size: 36px;
+        font-size: 50px;
         display: block;
         color: #666;
+        margin: auto;
       }
 
       &:hover {

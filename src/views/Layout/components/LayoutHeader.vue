@@ -17,7 +17,7 @@
         <li> <RouterLink to="/">服饰</RouterLink> </li>
       </ul>
       <div class="search">
-        <i class="iconfont icon-search"></i>
+        <el-icon><Search /></el-icon>
         <input type="text" placeholder="搜一搜">
       </div>
       <!-- 头部购物车 -->

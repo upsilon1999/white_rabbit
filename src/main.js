@@ -9,7 +9,13 @@ import router from './router'
 
 //引入初始化样式文件
 import '@/styles/common.scss'
+
+import * as Elicons from '@element-plus/icons-vue';
 const app = createApp(App)
+//全局注册elementplus icon
+Object.keys(Elicons).forEach((key) => {
+    app.component(key, Elicons[key]);
+});
 
 app.use(createPinia())
 app.use(router)

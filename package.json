@@ -21,6 +21,7 @@
     "eslint-plugin-vue": "^9.17.0",
     "sass": "^1.69.4",
     "unplugin-auto-import": "^0.16.6",
+    "unplugin-icons": "^0.17.1",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.11"
   }
