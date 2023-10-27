@@ -1,5 +1,22 @@
 <script setup>
+import { getCategoryAPI } from '@/apis/layout'
+import { onMounted, ref } from 'vue';
 
+// 用于存放一级导航路由列表方便生成
+const categoryList = ref([])
+
+
+const getCategory = async () => {
+	// 发送请求
+  const res = await getCategoryAPI()
+  console.log(res);
+  categoryList.value = res.data.result
+}
+
+onMounted(() => {
+	// 组件挂载完成后得到一级导航路由列表
+  getCategory()
+})
 </script>
 
 <template>
@@ -9,12 +26,9 @@
         <RouterLink to="/">小兔鲜</RouterLink>
       </h1>
       <ul class="app-header-nav">
-        <li class="home">
-          <RouterLink to="/">首页</RouterLink>
+        <li class="home" v-for="item in categoryList" :key="item.id">
+          <RouterLink to="/">{{item.name}}</RouterLink>
         </li>
-        <li> <RouterLink to="/">居家</RouterLink> </li>
-        <li> <RouterLink to="/">美食</RouterLink> </li>
-        <li> <RouterLink to="/">服饰</RouterLink> </li>
       </ul>
       <div class="search">
         <el-icon><Search /></el-icon>
