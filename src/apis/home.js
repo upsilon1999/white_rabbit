@@ -24,4 +24,12 @@ export const getHotAPI = () => {
           method:"get"
     })
   }
-  
+
+
+  //获取产品列表
+export const getProductListAPI = ()=>{
+	return httpInstance({
+		url:"/home/goods",
+		method:"get"
+	})
+}
