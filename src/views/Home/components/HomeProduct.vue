@@ -1,6 +1,8 @@
 <script setup>
 // 引入之前封装好的面板组件
 import HomePanel from './HomePanel.vue'
+//引入封装好的商品组件
+import GoodsItem from './GoodsItem.vue';
 //引入API
 import { getProductListAPI } from '@/apis/home';
 import { onMounted, ref } from 'vue';
@@ -33,12 +35,15 @@ onMounted(() => getProductList())
         </RouterLink>
         <ul class="goods-list">
           <li v-for="good in cate.goods" :key="good.id">
-            <RouterLink to="/" class="goods-item">
+            <!-- <RouterLink to="/" class="goods-item">
               <img v-img-lazy="good.picture" alt="" />
               <p class="name ellipsis">{{ good.name }}</p>
               <p class="desc ellipsis">{{ good.desc }}</p>
               <p class="price">&yen;{{ good.price }}</p>
-            </RouterLink>
+            </RouterLink> -->
+
+             <!-- 使用封装的商品组件 -->
+            <GoodsItem :good="good"></GoodsItem>
           </li>
         </ul>
       </div>
