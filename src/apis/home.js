@@ -16,3 +16,12 @@ export const findNewAPI = () => {
           method:"get"
     })
   }
+
+  //获取人气推荐的数据
+export const getHotAPI = () => {
+    return httpInstance({
+      url:'/home/hot',
+          method:"get"
+    })
+  }
+  
