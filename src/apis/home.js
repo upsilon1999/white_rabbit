@@ -8,3 +8,11 @@ export function getBannerAPI(){
 		method:"get"
 	})
 }
+
+//获取新鲜好物的数据
+export const findNewAPI = () => {
+    return httpInstance({
+      url:'/home/new',
+          method:"get"
+    })
+  }
